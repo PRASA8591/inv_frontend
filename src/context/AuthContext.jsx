@@ -79,6 +79,4 @@ export const AuthProvider = ({ children }) => {
 
 export const useAuth = () => useContext(AuthContext);
 
-// Correct syntax
-const apiUrl = import.meta.env.VITE_API_URL;
-axios.post(`${apiUrl}/api/auth/login`, data);
+
