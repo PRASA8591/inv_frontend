@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test POS Receipt Printout</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1e293b;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .receipt-container {
+      background-color: white;
+      width: 80mm; /* Standard thermal printer width */
+      padding: 5mm;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      font-size: 11px;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: none !important; color: #000; font-weight: 800; text-align: left; border-bottom: 1px solid #000; font-size: 11px; padding: 4px 0; }
+    td { padding: 4px 0; font-size: 11px; border: 0; }
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    .font-bold { font-weight: bold; }
+    .font-black { font-weight: 900; }
+    .text-xs { font-size: 10px; }
+    .mt-4 { margin-top: 16px; }
+    .header-title { font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .divider { border-top: 1px dashed #000; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="receipt-container">
+    <div class="text-center">
+      <div class="header-title">PRASATEK RETAIL</div>
+      <div class="text-xs font-bold">MAIN OUTLET, COLOMBO</div>
+      <div class="text-xs">Tel: +94 77 123 4567</div>
+      <div class="text-xs font-mono mt-4">#TEST-882910</div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="font-mono text-xs">
+      <div>DATE: 5/17/2026, 5:45:00 PM</div>
+      <div>CUST: WALK-IN</div>
+      <div>CASHIER: PRASA</div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ITEM</th>
+          <th class="text-center">QTY</th>
+          <th class="text-right">RATE</th>
+          <th class="text-right">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody class="font-mono">
+        <tr>
+          <td style="max-width: 35mm; word-wrap: break-word;">Logitech G Pro Wireless Mouse</td>
+          <td class="text-center">1</td>
+          <td class="text-right">150.00</td>
+          <td class="text-right">150.00</td>
+        </tr>
+        <tr>
+          <td style="max-width: 35mm; word-wrap: break-word;">Mechanical Keyboard Switches</td>
+          <td class="text-center">2</td>
+          <td class="text-right">25.00</td>
+          <td class="text-right">50.00</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="divider"></div>
+    
+    <div class="font-mono" style="font-size: 12px; font-weight: bold;">
+      <div style="display:flex; justify-content:space-between;"><span>SUBTOTAL:</span><span>Rs. 200.00</span></div>
+      
+      
+      <div style="display:flex; justify-content:space-between; font-size: 14px; border-top: 1px double #000; padding-top: 4px; margin-top: 4px;" class="font-black">
+        <span>GRAND TOTAL:</span>
+        <span>Rs. 200.00</span>
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+    <div class="text-center mt-4" style="font-size: 9px; font-family: 'Inter'; font-weight: 600;">
+      THANK YOU FOR SHOPPING WITH US<br/>PRASATEK SECURE POS NODE
+    </div>
+  </div>
+</body>
+</html>
