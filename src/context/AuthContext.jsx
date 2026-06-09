@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const API_URL = 'https://inv-backend-v7ld.onrender.com/api';
+  const API_URL = 'http://localhost:5000/api';
 
   useEffect(() => {
     const token = sessionStorage.getItem('token');
